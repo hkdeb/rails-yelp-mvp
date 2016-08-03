@@ -21,4 +21,13 @@
 </p>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<%= link_to 'Back', restaurants_path %> |
+<%= link_to 'New Review', new_restaurant_review_path(@restaurant) %>
+<hr>
+
+<% @restaurant.reviews.each do |review|%>
+  <p><%= review.content %></p>
+  <p><%= review.rating %></p>
+  <hr>
+<% end %>
+
